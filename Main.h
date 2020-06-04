@@ -8,14 +8,18 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TFormMain : public TForm
 {
 __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+	__fastcall TFormMain(TComponent* Owner);
+
+public: // START
+	__fastcall void InitProgram();
+	__fastcall void ExitProgram();
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TFormMain *FormMain;
 //---------------------------------------------------------------------------
 #endif
