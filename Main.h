@@ -80,7 +80,10 @@ __published:	// IDE-managed Components
 	TdxBarManager *BarMgr;
 	TNotebook *Notebook_Main;
 	TAdvMemo *memo;
-	TPanel *Panel1;
+	TPanel *__pnBase_00_;
+	TPanel *__pnBase_01;
+	TPanel *__pnBase_02_;
+	TPanel *__pnBase_03_;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);

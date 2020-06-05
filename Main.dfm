@@ -33,6 +33,9 @@ object FormMain: TFormMain
       Width = 816
       Height = 538
       Align = alLeft
+      DoubleBuffered = True
+      PageIndex = 3
+      ParentDoubleBuffered = False
       TabOrder = 0
       object TPage
         Left = 0
@@ -40,7 +43,7 @@ object FormMain: TFormMain
         Caption = 'Default'
         ExplicitWidth = 150
         ExplicitHeight = 150
-        object Panel1: TPanel
+        object __pnBase_00_: TPanel
           Left = 0
           Top = 0
           Width = 816
@@ -52,6 +55,75 @@ object FormMain: TFormMain
           TabOrder = 0
           ExplicitLeft = 216
           ExplicitTop = 112
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
+      end
+      object TPage
+        Left = 0
+        Top = 0
+        HelpContext = 1
+        Caption = 'Page 1'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        object __pnBase_01: TPanel
+          Left = 0
+          Top = 0
+          Width = 816
+          Height = 538
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clActiveCaption
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 144
+          ExplicitTop = 80
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
+      end
+      object TPage
+        Left = 0
+        Top = 0
+        HelpContext = 2
+        Caption = 'Page 2'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        object __pnBase_02_: TPanel
+          Left = 0
+          Top = 0
+          Width = 816
+          Height = 538
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clBtnText
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 168
+          ExplicitTop = 176
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
+      end
+      object TPage
+        Left = 0
+        Top = 0
+        HelpContext = 3
+        Caption = 'Page 3'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        object __pnBase_03_: TPanel
+          Left = 0
+          Top = 0
+          Width = 816
+          Height = 538
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clHotLight
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 240
+          ExplicitTop = 144
           ExplicitWidth = 185
           ExplicitHeight = 41
         end
