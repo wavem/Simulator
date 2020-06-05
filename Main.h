@@ -69,6 +69,7 @@
 #include "dxSkinWhiteprint.hpp"
 #include "dxSkinXmas2008Blue.hpp"
 #include <Vcl.ExtCtrls.hpp>
+#include "AdvMemo.hpp"
 //---------------------------------------------------------------------------
 class TFormMain : public TForm
 {
@@ -77,6 +78,9 @@ __published:	// IDE-managed Components
 	TdxRibbonTab *dxRibbon1Tab1;
 	TdxRibbon *dxRibbon1;
 	TdxBarManager *BarMgr;
+	TNotebook *Notebook_Main;
+	TAdvMemo *memo;
+	TPanel *Panel1;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);
