@@ -80,6 +80,10 @@ __fastcall TFormMain::TFormMain(TComponent* Owner)
 
 void __fastcall TFormMain::InitProgram() {
 
+	// Default Page Setting
+	Notebook_Main->PageIndex = 0; // Default Page.
+
+
 	PrintMsg(L"Init Complete");
 }
 //---------------------------------------------------------------------------
@@ -92,5 +96,12 @@ void __fastcall TFormMain::ExitProgram() {
 void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
 	int t_Line = memo->Lines->Add(_str);
 	memo->SetCursor(0, t_Line);
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
+{
+	TdxBarLargeButton* p_Btn = (TdxBarLargeButton*)Sender;
+	int t_Tag = p_Btn->Tag;
+	Notebook_Main->PageIndex = t_Tag;
 }
 //---------------------------------------------------------------------------

@@ -323,6 +323,7 @@ object FormMain: TFormMain
       Category = 0
       Hint = 'Page 0'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -462,6 +463,7 @@ object FormMain: TFormMain
       Category = 0
       Hint = 'Page 1'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -601,6 +603,7 @@ object FormMain: TFormMain
       Category = 0
       Hint = 'Page 2'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -740,6 +743,7 @@ object FormMain: TFormMain
       Category = 0
       Hint = 'Page 3'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
