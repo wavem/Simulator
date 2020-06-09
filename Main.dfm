@@ -1,9 +1,10 @@
 object FormMain: TFormMain
   Left = 0
   Top = 0
+  BorderStyle = bsSingle
   Caption = 'Simulator'
-  ClientHeight = 664
-  ClientWidth = 1083
+  ClientHeight = 674
+  ClientWidth = 1093
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +17,8 @@ object FormMain: TFormMain
   object ___pnBase: TPanel
     Left = 0
     Top = 126
-    Width = 1083
-    Height = 538
+    Width = 1093
+    Height = 548
     Align = alClient
     BevelOuter = bvNone
     Color = clWindowFrame
@@ -31,12 +32,13 @@ object FormMain: TFormMain
       Left = 0
       Top = 0
       Width = 816
-      Height = 538
+      Height = 548
       Align = alLeft
       DoubleBuffered = True
       PageIndex = 3
       ParentDoubleBuffered = False
       TabOrder = 0
+      ExplicitHeight = 538
       object TPage
         Left = 0
         Top = 0
@@ -47,7 +49,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 816
-          Height = 538
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clMedGray
@@ -70,7 +72,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 816
-          Height = 538
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clActiveCaption
@@ -93,7 +95,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 816
-          Height = 538
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clBtnText
@@ -116,7 +118,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 816
-          Height = 538
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clHotLight
@@ -130,10 +132,10 @@ object FormMain: TFormMain
       end
     end
     object memo: TAdvMemo
-      Left = 816
+      Left = 826
       Top = 0
       Width = 267
-      Height = 538
+      Height = 548
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
       ActiveLineSettings.ShowActiveLineIndicator = False
@@ -243,12 +245,14 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
+      ExplicitLeft = 816
+      ExplicitHeight = 538
     end
   end
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 1083
+    Width = 1093
     Height = 126
     Cursor = crHandPoint
     BarManager = BarMgr
