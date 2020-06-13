@@ -3,6 +3,9 @@
 #ifndef MainH
 #define MainH
 //---------------------------------------------------------------------------
+
+#include "libxl.h"
+//---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
