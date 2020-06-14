@@ -100,6 +100,7 @@ public:		// User declarations
 public: // START
 	void __fastcall InitProgram();
 	void __fastcall ExitProgram();
+	void __fastcall InitConfigExcelFile();
 	void __fastcall PrintMsg(UnicodeString _str);
 };
 //---------------------------------------------------------------------------

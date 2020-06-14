@@ -69,6 +69,7 @@
 #pragma link "dxSkinXmas2008Blue"
 #pragma link "AdvMemo"
 #pragma resource "*.dfm"
+#pragma link "libxl.lib"
 TFormMain *FormMain;
 //---------------------------------------------------------------------------
 __fastcall TFormMain::TFormMain(TComponent* Owner)
@@ -83,8 +84,15 @@ void __fastcall TFormMain::InitProgram() {
 	// Default Page Setting
 	Notebook_Main->PageIndex = 0; // Default Page.
 
+	InitConfigExcelFile();
 
 	PrintMsg(L"Init Complete");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::InitConfigExcelFile() {
+
+	PrintMsg(L"Init Config Excel Complete");
 }
 //---------------------------------------------------------------------------
 
