@@ -92,7 +92,23 @@ void __fastcall TFormMain::InitProgram() {
 
 void __fastcall TFormMain::InitConfigExcelFile() {
 
-	PrintMsg(L"Init Config Excel Complete");
+
+	m_Book = xlCreateXMLBook();
+	if(m_Book) {
+		m_Book->setKey(L"JungWook Son", L"windows-2124230806c1e30f66bf6365a7l1hdm8");
+		//if(m_Book->load(L"LibxlTest.xlsx")) {
+		//	libxl::Format* format = NULL;
+		//	libxl::Sheet* p_Sheet = getSheetByName(m_Book, L"Sheet1");
+		//	PrintMsg(p_Sheet->readNum(0, 0, &format));
+		//} else {
+		//	PrintMsg(L"Fail to Load Excel File");
+		//	return;
+		//}
+	} else {
+		PrintMsg(L"Fail to Create Book");
+		return;
+	}
+	PrintMsg(L"Config Init Complete");
 }
 //---------------------------------------------------------------------------
 

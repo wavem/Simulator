@@ -102,6 +102,10 @@ public: // START
 	void __fastcall ExitProgram();
 	void __fastcall InitConfigExcelFile();
 	void __fastcall PrintMsg(UnicodeString _str);
+
+
+public: // Member
+	libxl::Book* m_Book;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMain *FormMain;
