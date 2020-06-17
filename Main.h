@@ -102,10 +102,11 @@ public: // START
 	void __fastcall ExitProgram();
 	void __fastcall InitConfigExcelFile();
 	void __fastcall PrintMsg(UnicodeString _str);
-
+	libxl::Sheet* __fastcall getSheetByName(libxl::Book* book, const wchar_t* name);
 
 public: // Member
 	libxl::Book* m_Book;
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMain *FormMain;
