@@ -116,6 +116,10 @@
         <BCC_PCHName_Clang>Simulator_PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="libxl_functions.cpp">
+            <DependentOn>libxl_functions.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Main.cpp">
             <Form>FormMain</Form>
             <FormType>dfm</FormType>
