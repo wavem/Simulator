@@ -73,6 +73,10 @@
 #include "dxSkinXmas2008Blue.hpp"
 #include <Vcl.ExtCtrls.hpp>
 #include "AdvMemo.hpp"
+#include "AdvGrid.hpp"
+#include "AdvObj.hpp"
+#include "BaseGrid.hpp"
+#include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
 class TFormMain : public TForm
 {
@@ -92,6 +96,7 @@ __published:	// IDE-managed Components
 	TdxBarLargeButton *dxBarLargeButton2;
 	TdxBarLargeButton *dxBarLargeButton3;
 	TdxBarLargeButton *dxBarLargeButton4;
+	TAdvStringGrid *grid_Protocol;
 	void __fastcall ClickMenuButton(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
