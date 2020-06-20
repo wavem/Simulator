@@ -82,19 +82,23 @@ object FormMain: TFormMain
           ExplicitWidth = 185
           ExplicitHeight = 41
           object grid_Protocol: TAdvStringGrid
-            Left = 88
+            Left = 3
             Top = 56
-            Width = 689
-            Height = 457
+            Width = 820
+            Height = 489
             Cursor = crDefault
+            ColCount = 9
+            DefaultColWidth = 94
             DrawingStyle = gdsClassic
+            RowCount = 40
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = []
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
             ParentFont = False
-            ScrollBars = ssBoth
+            ScrollBars = ssVertical
             TabOrder = 0
             HoverRowCells = [hcNormal, hcSelected]
             ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -139,7 +143,8 @@ object FormMain: TFormMain
               'Larger than'
               'Smaller than'
               'Clear')
-            FixedRowHeight = 22
+            FixedColWidth = 47
+            FixedRowHeight = 34
             FixedFont.Charset = DEFAULT_CHARSET
             FixedFont.Color = clWindowText
             FixedFont.Height = -11
@@ -150,6 +155,8 @@ object FormMain: TFormMain
             HoverButtons.Position = hbLeftFromColumnLeft
             HTMLSettings.ImageFolder = 'images'
             HTMLSettings.ImageBaseName = 'img'
+            IntelliZoom = False
+            MouseActions.WheelAction = waScroll
             PrintSettings.DateFormat = 'dd/mm/yyyy'
             PrintSettings.Font.Charset = DEFAULT_CHARSET
             PrintSettings.Font.Color = clWindowText
@@ -172,6 +179,8 @@ object FormMain: TFormMain
             PrintSettings.FooterFont.Name = 'Tahoma'
             PrintSettings.FooterFont.Style = []
             PrintSettings.PageNumSep = '/'
+            ScrollBarAlways = saVert
+            ScrollSynch = True
             SearchFooter.FindNextCaption = 'Find &next'
             SearchFooter.FindPrevCaption = 'Find &previous'
             SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -185,8 +194,60 @@ object FormMain: TFormMain
             SearchFooter.HintFindPrev = 'Find previous occurrence'
             SearchFooter.HintHighlight = 'Highlight occurrences'
             SearchFooter.MatchCaseCaption = 'Match case'
+            ShowSelection = False
             SortSettings.DefaultFormat = ssAutomatic
             Version = '7.8.0.1'
+            ColWidths = (
+              47
+              94
+              94
+              94
+              94
+              94
+              94
+              94
+              94)
+            RowHeights = (
+              34
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22
+              22)
           end
         end
       end
