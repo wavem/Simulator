@@ -87,6 +87,10 @@ void __fastcall TFormMain::InitProgram() {
 	// Default Page Setting
 	Notebook_Main->PageIndex = 0; // Default Page.
 
+	// Init Grid
+	InitGrid();
+
+	// Init Libxl
 	InitConfigExcelFile();
 
 	PrintMsg(L"Init Complete");
@@ -112,6 +116,12 @@ void __fastcall TFormMain::InitConfigExcelFile() {
 		return;
 	}
 	PrintMsg(L"Config Init Complete");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::InitGrid() {
+	grid_Protocol->Cells[0][0] = L"Idx";
+	grid_Protocol->Cells[1][0] = L"Bit 7";
 }
 //---------------------------------------------------------------------------
 

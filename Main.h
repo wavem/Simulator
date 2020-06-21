@@ -102,11 +102,17 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);
 
-public: // START
+
+// START
+public: // Basic Functions
 	void __fastcall InitProgram();
 	void __fastcall ExitProgram();
 	void __fastcall InitConfigExcelFile();
 	void __fastcall PrintMsg(UnicodeString _str);
+    void __fastcall InitGrid();
+
+
+public: // Libxl functions
 	libxl::Sheet* __fastcall getSheetByName(libxl::Book* book, const wchar_t* name);
 
 public: // Member
