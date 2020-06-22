@@ -122,6 +122,13 @@ void __fastcall TFormMain::InitConfigExcelFile() {
 void __fastcall TFormMain::InitGrid() {
 	grid_Protocol->Cells[0][0] = L"Idx";
 	grid_Protocol->Cells[1][0] = L"Bit 7";
+	grid_Protocol->Cells[2][0] = L"Bit 6";
+	grid_Protocol->Cells[3][0] = L"Bit 5";
+	grid_Protocol->Cells[4][0] = L"Bit 4";
+	grid_Protocol->Cells[5][0] = L"Bit 3";
+	grid_Protocol->Cells[6][0] = L"Bit 2";
+	grid_Protocol->Cells[7][0] = L"Bit 1";
+	grid_Protocol->Cells[8][0] = L"Bit 0";
 }
 //---------------------------------------------------------------------------
 
@@ -141,5 +148,13 @@ void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
 	TdxBarLargeButton* p_Btn = (TdxBarLargeButton*)Sender;
 	int t_Tag = p_Btn->Tag;
 	Notebook_Main->PageIndex = t_Tag;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::grid_ProtocolGetAlignment(TObject *Sender, int ARow, int ACol,
+		  TAlignment &HAlign, TVAlignment &VAlign)
+{
+	HAlign = taCenter;
+	VAlign = vtaCenter;
 }
 //---------------------------------------------------------------------------

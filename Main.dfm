@@ -101,6 +101,7 @@ object FormMain: TFormMain
             ScrollBars = ssVertical
             TabOrder = 0
             HoverRowCells = [hcNormal, hcSelected]
+            OnGetAlignment = grid_ProtocolGetAlignment
             ActiveCellFont.Charset = DEFAULT_CHARSET
             ActiveCellFont.Color = clWindowText
             ActiveCellFont.Height = -11

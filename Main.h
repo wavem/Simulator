@@ -98,6 +98,8 @@ __published:	// IDE-managed Components
 	TdxBarLargeButton *dxBarLargeButton4;
 	TAdvStringGrid *grid_Protocol;
 	void __fastcall ClickMenuButton(TObject *Sender);
+	void __fastcall grid_ProtocolGetAlignment(TObject *Sender, int ARow, int ACol, TAlignment &HAlign,
+          TVAlignment &VAlign);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);
