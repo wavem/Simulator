@@ -6,7 +6,7 @@
         <AppType>Application</AppType>
         <MainSource>Simulator.cpp</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
@@ -37,6 +37,12 @@
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
@@ -113,6 +119,13 @@
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
         <TASM_Debugging>None</TASM_Debugging>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;cxLibraryRS21.bpi;dxGDIPlusRS21.bpi;dxCoreRS21.bpi;dxThemeRS21.bpi;vclx.bpi;dxBarRS21.bpi;dxComnRS21.bpi;dxRibbonRS21.bpi;cxEditorsRS21.bpi;cxDataRS21.bpi;dbrtl.bpi;vclimg.bpi;vcldb.bpi;dxSkinsCoreRS21.bpi;dxSkinBlackRS21.bpi;dxSkinBlueprintRS21.bpi;dxSkinBlueRS21.bpi;dxSkinCaramelRS21.bpi;dxSkinCoffeeRS21.bpi;dxSkinDarkRoomRS21.bpi;dxSkinDarkSideRS21.bpi;dxSkinDevExpressDarkStyleRS21.bpi;dxSkinDevExpressStyleRS21.bpi;dxSkinFoggyRS21.bpi;dxSkinGlassOceansRS21.bpi;dxSkinHighContrastRS21.bpi;dxSkiniMaginaryRS21.bpi;dxSkinLilianRS21.bpi;dxSkinLiquidSkyRS21.bpi;dxSkinLondonLiquidSkyRS21.bpi;dxSkinMcSkinRS21.bpi;dxSkinMetropolisDarkRS21.bpi;dxSkinMetropolisRS21.bpi;dxSkinMoneyTwinsRS21.bpi;dxSkinOffice2007BlackRS21.bpi;dxSkinOffice2007BlueRS21.bpi;dxSkinOffice2007GreenRS21.bpi;dxSkinOffice2007PinkRS21.bpi;dxSkinOffice2007SilverRS21.bpi;dxSkinOffice2010BlackRS21.bpi;dxSkinOffice2010BlueRS21.bpi;dxSkinOffice2010SilverRS21.bpi;dxSkinOffice2013DarkGrayRS21.bpi;dxSkinOffice2013LightGrayRS21.bpi;dxSkinOffice2013WhiteRS21.bpi;dxSkinPumpkinRS21.bpi;dxSkinSevenClassicRS21.bpi;dxSkinSevenRS21.bpi;dxSkinSharpPlusRS21.bpi;dxSkinSharpRS21.bpi;dxSkinSilverRS21.bpi;dxSkinSpringTimeRS21.bpi;dxSkinStardustRS21.bpi;dxSkinSummer2008RS21.bpi;dxSkinTheAsphaltWorldRS21.bpi;dxSkinValentineRS21.bpi;dxSkinVisualStudio2013BlueRS21.bpi;dxSkinVisualStudio2013DarkRS21.bpi;dxSkinVisualStudio2013LightRS21.bpi;dxSkinVS2010RS21.bpi;dxSkinWhiteprintRS21.bpi;dxSkinXmas2008BlueRS21.bpi;dxRibbonCustomizationFormRS21.bpi;cxTreeListRS21.bpi;cxPageControlRS21.bpi;cxExportRS21.bpi;dxSpreadSheetRS21.bpi;dxLayoutControlRS21.bpi;xmlrtl.bpi;cxBarEditItemRS21.bpi;dxSkinsdxBarPainterRS21.bpi;dxSkinsdxRibbonPainterRS21.bpi;tmsdXE7.bpi;adortl.bpi;vclactnband.bpi;VclSmp.bpi</LinkPackageImports>
+        <ILINK_LibraryPath>$(BDS)\lib\win32\release\;C:\Program Files (x86)\DevExpress VCL\Library\RS21\;C:\Users\Public\Documents\Embarcadero\Studio\15.0\DCP\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <BCC_IncludePath>Z:\wave\010_Project\020_Util\Simulator\Server\010_Source\include_cpp;$(BCC_IncludePath)</BCC_IncludePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <BCC_PCHName_Clang>Simulator_PCH1.h</BCC_PCHName_Clang>
