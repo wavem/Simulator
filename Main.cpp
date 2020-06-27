@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Main.h"
+#include "Define.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "cxClasses"
@@ -99,14 +100,11 @@ void __fastcall TFormMain::InitProgram() {
 
 void __fastcall TFormMain::InitConfigExcelFile() {
 
-
 	m_Book = xlCreateXMLBook();
 	if(m_Book) {
 		m_Book->setKey(L"JungWook Son", L"windows-2124230806c1e30f66bf6365a7l1hdm8");
 		if(m_Book->load(L"Config.xlsx")) {
-			libxl::Format* format = NULL;
-			libxl::Sheet* p_Sheet = getSheetByName(m_Book, L"Sheet1");
-			PrintMsg(p_Sheet->readNum(0, 0, &format));
+			LoadSheet(L"Sheet1");
 		} else {
 			PrintMsg(L"Fail to Load Excel File");
 			return;
@@ -156,5 +154,12 @@ void __fastcall TFormMain::grid_ProtocolGetAlignment(TObject *Sender, int ARow, 
 {
 	HAlign = taCenter;
 	VAlign = vtaCenter;
+}
+//---------------------------------------------------------------------------
+
+bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
+	libxl::Format* format = NULL;
+	libxl::Sheet* p_Sheet = getSheetByName(m_Book, L"Sheet1");
+	PrintMsg(p_Sheet->readNum(0, 0, &format));
 }
 //---------------------------------------------------------------------------
