@@ -111,7 +111,8 @@ public: // Basic Functions
 	void __fastcall ExitProgram();
 	void __fastcall InitConfigExcelFile();
 	void __fastcall PrintMsg(UnicodeString _str);
-    void __fastcall InitGrid();
+	void __fastcall InitGrid();
+	void __fastcall RefreshGrid();
 
 
 public: // Libxl functions

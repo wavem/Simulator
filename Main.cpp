@@ -104,7 +104,7 @@ void __fastcall TFormMain::InitConfigExcelFile() {
 	if(m_Book) {
 		m_Book->setKey(L"JungWook Son", L"windows-2124230806c1e30f66bf6365a7l1hdm8");
 		if(m_Book->load(L"Config.xlsx")) {
-			LoadSheet(L"Sheet1");
+			if(LoadSheet(L"Sheet1")) PrintMsg(L"Success to load sheet");
 		} else {
 			PrintMsg(L"Fail to Load Excel File");
 			return;
@@ -158,8 +158,39 @@ void __fastcall TFormMain::grid_ProtocolGetAlignment(TObject *Sender, int ARow, 
 //---------------------------------------------------------------------------
 
 bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
+#if 0
 	libxl::Format* format = NULL;
 	libxl::Sheet* p_Sheet = getSheetByName(m_Book, L"Sheet1");
 	PrintMsg(p_Sheet->readNum(0, 0, &format));
+#endif
+
+	// Common
+	UnicodeString tempStr = L"";
+	libxl::Sheet* t_pSheet = NULL;
+	libxl::Format* t_pFormat = NULL;
+
+	// Load Sheet
+	t_pSheet = getSheetByName(m_Book, _SheetName.w_str());
+	if(!t_pSheet) {
+		tempStr = L"Fail to Load sheet : ";
+		tempStr += _SheetName;
+		PrintMsg(tempStr);
+		return false;
+	}
+
+
+
+
+
+	return true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::RefreshGrid() {
+
+	// Init belows...
+	// Color
+	// Merge
+	// Text
 }
 //---------------------------------------------------------------------------
