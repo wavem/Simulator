@@ -104,7 +104,7 @@ void __fastcall TFormMain::InitConfigExcelFile() {
 	if(m_Book) {
 		m_Book->setKey(L"JungWook Son", L"windows-2124230806c1e30f66bf6365a7l1hdm8");
 		if(m_Book->load(L"Config.xlsx")) {
-			if(LoadSheet(L"Sheet1")) PrintMsg(L"Success to load sheet");
+			if(LoadSheet(L"Test")) PrintMsg(L"Success to load sheet");
 		} else {
 			PrintMsg(L"Fail to Load Excel File");
 			return;
@@ -168,6 +168,8 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 	UnicodeString tempStr = L"";
 	libxl::Sheet* t_pSheet = NULL;
 	libxl::Format* t_pFormat = NULL;
+	int t_RowLast = 0;
+	int t_TotalByteCount = 0;
 
 	// Load Sheet
 	t_pSheet = getSheetByName(m_Book, _SheetName.w_str());
@@ -178,6 +180,13 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 		return false;
 	}
 
+	t_RowLast = t_pSheet->lastRow();
+	tempStr.sprintf(L"Last Row : %d", t_RowLast);
+	PrintMsg(tempStr);
+
+	// Set Row Count
+	t_TotalByteCount = t_RowLast - DEFAULT_PROTOCOL_INFO_LINE_COUNT;
+	grid_Protocol->RowCount = t_TotalByteCount + 1; // +1 is Fixed Row
 
 
 
