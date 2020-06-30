@@ -171,6 +171,11 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 	int t_RowLast = 0;
 	int t_TotalByteCount = 0;
 
+	int t_RowStart = 0;
+	int t_RowEnd = 0;
+	int t_ColStart = 0;
+	int t_ColEnd = 0;
+
 	// Load Sheet
 	t_pSheet = getSheetByName(m_Book, _SheetName.w_str());
 	if(!t_pSheet) {
@@ -188,6 +193,14 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 	t_TotalByteCount = t_RowLast - DEFAULT_PROTOCOL_INFO_LINE_COUNT;
 	grid_Protocol->RowCount = t_TotalByteCount + 1; // +1 is Fixed Row
 
+	// Merge
+
+
+	// Load Text Data
+	for(int i = 0 ; i < t_TotalByteCount ; i++) {
+		tempStr = t_pSheet->readNum(i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2, &t_pFormat);
+		grid_Protocol->Cells[0][i + 1] = tempStr;
+	}
 
 
 
