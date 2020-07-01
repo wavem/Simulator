@@ -116,7 +116,6 @@ public: // Basic Functions
 
 
 public: // Libxl functions
-	libxl::Sheet* __fastcall getSheetByName(libxl::Book* book, const wchar_t* name);
 	bool __fastcall LoadSheet(UnicodeString _SheetName);
 
 public: // Member

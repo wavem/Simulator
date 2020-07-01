@@ -5,6 +5,7 @@
 
 #include "Main.h"
 #include "Define.h"
+#include "libxl_functions.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "cxClasses"
