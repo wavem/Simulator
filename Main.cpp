@@ -199,7 +199,7 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 
 	// Load Text Data
 	for(int i = 0 ; i < t_TotalByteCount ; i++) {
-		tempStr = t_pSheet->readNum(i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2, &t_pFormat);
+		tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2);
 		grid_Protocol->Cells[0][i + 1] = tempStr;
 	}
 
