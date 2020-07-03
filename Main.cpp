@@ -201,6 +201,11 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 	for(int i = 0 ; i < t_TotalByteCount ; i++) {
 		tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2);
 		grid_Protocol->Cells[0][i + 1] = tempStr;
+
+		for(int j = 1 ; j < 9 ; j++) {
+			tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, j + 2);
+			grid_Protocol->Cells[j][i + 1] = tempStr;
+		}
 	}
 
 
