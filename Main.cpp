@@ -159,11 +159,6 @@ void __fastcall TFormMain::grid_ProtocolGetAlignment(TObject *Sender, int ARow, 
 //---------------------------------------------------------------------------
 
 bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
-#if 0
-	libxl::Format* format = NULL;
-	libxl::Sheet* p_Sheet = getSheetByName(m_Book, L"Sheet1");
-	PrintMsg(p_Sheet->readNum(0, 0, &format));
-#endif
 
 	// Common
 	UnicodeString tempStr = L"";
@@ -230,13 +225,7 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 			}
 		}
 		t_gridRow++;
-		//t_gridCol = 1;
 	}
-
-
-
-	//t_bIsMerge = t_pSheet->getMerge(row, col, &t_merge_row_first, &t_merge_row_last, &t_merge_col_first, &t_merge_col_last);
-
 
 	// Load Text Data
 	for(int i = 0 ; i < t_TotalByteCount ; i++) {
@@ -248,8 +237,6 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 			grid_Protocol->Cells[j][i + 1] = tempStr;
 		}
 	}
-
-
 
 	return true;
 }
