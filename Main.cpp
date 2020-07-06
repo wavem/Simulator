@@ -201,12 +201,18 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 	// Get Row/Col Information
 	t_RowStart = DEFAULT_PROTOCOL_INFO_LINE_COUNT;
 	t_RowEnd = t_RowLast;
-	t_ColStart = DEFAULT_PROTOCOL_COL_START;
-	t_ColEnd = DEFAULT_PROTOCOL_COL_START + 7;
+	t_ColStart = DEFAULT_PROTOCOL_COL_START + 1; // +1 means real data area.
+	t_ColEnd = DEFAULT_PROTOCOL_COL_START + 9; // 8 + 1 == 9
 
 	// Set Row Count
 	t_TotalByteCount = t_RowLast - DEFAULT_PROTOCOL_INFO_LINE_COUNT;
 	grid_Protocol->RowCount = t_TotalByteCount + 1; // +1 is Fixed Row
+
+	// Load Byte Index and Print it into Grid
+	for(int i = 0 ; i < t_TotalByteCount ; i++) {
+		tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2);
+		grid_Protocol->Cells[0][i + 1] = tempStr;
+	}
 
 	// Merge Sync
 	t_gridRow = 1;
@@ -215,6 +221,9 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 		for(int col = t_ColStart ; col < t_ColEnd ; col++) {
 			t_bIsMerge = t_pSheet->getMerge(row, col, &t_merge_row_first, &t_merge_row_last, &t_merge_col_first, &t_merge_col_last);
 			t_gridCol = col - t_ColStart + 1;
+			tempStr = getCellValue(t_pSheet, row, col);
+			grid_Protocol->Cells[t_gridCol][t_gridRow] = tempStr;
+
 			if(t_bIsMerge) {
 				t_H_gap = t_merge_col_last - t_merge_col_first + 1; // +1 is essential
 				t_V_gap = t_merge_row_last - t_merge_row_first;
@@ -225,17 +234,6 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 			}
 		}
 		t_gridRow++;
-	}
-
-	// Load Text Data
-	for(int i = 0 ; i < t_TotalByteCount ; i++) {
-		tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2);
-		grid_Protocol->Cells[0][i + 1] = tempStr;
-
-		for(int j = 1 ; j < 9 ; j++) {
-			tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, j + 2);
-			grid_Protocol->Cells[j][i + 1] = tempStr;
-		}
 	}
 
 	return true;
