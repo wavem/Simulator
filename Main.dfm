@@ -1,11 +1,12 @@
 object FormMain: TFormMain
   Left = 0
   Top = 0
-  BorderStyle = bsSingle
+  BorderStyle = bsDialog
   Caption = 'Simulator'
   ClientHeight = 674
   ClientWidth = 1093
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -34,6 +35,7 @@ object FormMain: TFormMain
       Width = 826
       Height = 548
       Align = alLeft
+      Anchors = [akLeft, akTop, akRight, akBottom]
       DoubleBuffered = True
       PageIndex = 1
       ParentDoubleBuffered = False
@@ -81,12 +83,16 @@ object FormMain: TFormMain
           ExplicitTop = 80
           ExplicitWidth = 185
           ExplicitHeight = 41
+          DesignSize = (
+            826
+            548)
           object grid_Protocol: TAdvStringGrid
             Left = 3
             Top = 56
             Width = 820
             Height = 489
             Cursor = crDefault
+            Anchors = [akLeft, akTop, akRight, akBottom]
             ColCount = 9
             DefaultColWidth = 94
             DrawingStyle = gdsClassic
@@ -125,6 +131,7 @@ object FormMain: TFormMain
             ControlLook.DropDownFooter.Font.Style = []
             ControlLook.DropDownFooter.Visible = True
             ControlLook.DropDownFooter.Buttons = <>
+            DefaultAlignment = taCenter
             Filter = <>
             FilterDropDown.Font.Charset = DEFAULT_CHARSET
             FilterDropDown.Font.Color = clWindowText
