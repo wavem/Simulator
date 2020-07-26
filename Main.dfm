@@ -25,10 +25,6 @@ object FormMain: TFormMain
     Color = clBlack
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 200
-    ExplicitTop = 176
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
@@ -67,8 +63,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = 'Page 1'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_01: TPanel
           Left = 0
           Top = 0
@@ -79,10 +73,6 @@ object FormMain: TFormMain
           Color = clActiveCaption
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 144
-          ExplicitTop = 80
-          ExplicitWidth = 185
-          ExplicitHeight = 41
           DesignSize = (
             826
             548)
@@ -388,7 +378,7 @@ object FormMain: TFormMain
         '')
       MarkerList.UseDefaultMarkerImageIndex = False
       MarkerList.DefaultMarkerImageIndex = -1
-      MarkerList.ImageTransparentColor = -1
+      MarkerList.ImageTransparentColor = 33554432
       OleDropTarget = []
       PrintOptions.MarginLeft = 0
       PrintOptions.MarginRight = 0
@@ -420,8 +410,6 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
-      ExplicitLeft = 816
-      ExplicitHeight = 538
     end
   end
   object dxRibbon1: TdxRibbon
@@ -435,7 +423,6 @@ object FormMain: TFormMain
     Contexts = <>
     TabOrder = 1
     TabStop = False
-    ExplicitWidth = 780
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = 'Menu'

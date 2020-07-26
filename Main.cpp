@@ -86,6 +86,9 @@ __fastcall TFormMain::TFormMain(TComponent* Owner)
 
 void __fastcall TFormMain::InitProgram() {
 
+	// Common
+	UnicodeString tempStr = L"";
+
 	// Default Page Setting
 	Notebook_Main->PageIndex = 0; // Default Page.
 
@@ -94,6 +97,36 @@ void __fastcall TFormMain::InitProgram() {
 
 	// Init Libxl
 	InitConfigExcelFile();
+
+
+	// Socket Init
+	WSADATA data;
+	WORD version;
+	int ret = 0;
+
+	version = MAKEWORD(2, 2);
+	ret = WSAStartup(version, &data);
+	if(ret != 0) {
+		ret = WSAGetLastError();
+		if(ret == WSANOTINITIALISED) {
+			tempStr.sprintf(L"Socket not initialised (error code : %d)", ret);
+			PrintMsg(tempStr);
+		} else {
+			tempStr.sprintf(L"Socket error (error code : %d)", ret);
+			PrintMsg(tempStr);
+		}
+	} else {
+		PrintMsg(L"Socket init success");
+	}
+
+	// Create T Client Socket
+	//if(CreateTCPSocket() == false) return;
+
+	// Create T Client Thread
+	//if(CreateClientThread() == false) return;
+
+
+
 
 	PrintMsg(L"Init Complete");
 }
