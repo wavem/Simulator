@@ -114,6 +114,9 @@ public: // Basic Functions
 	void __fastcall InitGrid();
 	void __fastcall RefreshGrid();
 
+public: // Socket
+	bool __fastcall CreateUDPSocket();
+
 
 public: // Libxl functions
 	bool __fastcall LoadSheet(UnicodeString _SheetName);

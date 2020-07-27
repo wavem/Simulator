@@ -119,8 +119,8 @@ void __fastcall TFormMain::InitProgram() {
 		PrintMsg(L"Socket init success");
 	}
 
-	// Create T Client Socket
-	//if(CreateTCPSocket() == false) return;
+	// Create UDP Socket
+	if(CreateUDPSocket() == false) return;
 
 	// Create T Client Thread
 	//if(CreateClientThread() == false) return;
@@ -279,5 +279,11 @@ void __fastcall TFormMain::RefreshGrid() {
 	// Color
 	// Merge
 	// Text
+}
+//---------------------------------------------------------------------------
+
+bool __fastcall TFormMain::CreateUDPSocket() {
+
+	return true;
 }
 //---------------------------------------------------------------------------
