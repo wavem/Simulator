@@ -115,6 +115,7 @@ public: // Basic Functions
 	void __fastcall RefreshGrid();
 
 public: // Socket
+	SOCKET m_sock_UDP;
 	bool __fastcall CreateUDPSocket();
 
 
