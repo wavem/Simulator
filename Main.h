@@ -126,6 +126,16 @@ public: // Libxl functions
 public: // Member
 	libxl::Book* m_Book;
 
+
+
+
+public: // User Message Handler
+	void __fastcall PrintThreadLogMessage(TMessage &_msg);
+
+BEGIN_MESSAGE_MAP
+	MESSAGE_HANDLER(MSG_LOG_FROM_THREAD, TMessage, PrintThreadLogMessage)
+END_MESSAGE_MAP(TForm)
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMain *FormMain;
