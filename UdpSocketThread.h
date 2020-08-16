@@ -3,8 +3,9 @@
 #ifndef UdpSocketThreadH
 #define UdpSocketThreadH
 //---------------------------------------------------------------------------
-#include "Main.h"
 
+#include "Main.h"
+#include <System.Classes.hpp>
 enum ThreadWorkingType
 {
 	THREAD_STOP = 0,

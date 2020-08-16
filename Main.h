@@ -3,9 +3,9 @@
 #ifndef MainH
 #define MainH
 //---------------------------------------------------------------------------
-
 #include "libxl.h"
 #include "Define.h"
+#include "UdpSocketThread.h"
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
@@ -79,6 +79,7 @@
 #include "BaseGrid.hpp"
 #include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
+class CUdpSocketThread;
 class TFormMain : public TForm
 {
 __published:	// IDE-managed Components
@@ -118,6 +119,8 @@ public: // Basic Functions
 public: // Socket
 	SOCKET m_sock_UDP;
 	bool __fastcall CreateUDPSocket();
+	bool __fastcall CreateUDPThread();
+	CUdpSocketThread* m_UDPThread;
 
 
 public: // Libxl functions
