@@ -340,6 +340,19 @@ void __fastcall TFormMain::PrintThreadLogMessage(TMessage &_msg) {
 
 bool __fastcall TFormMain::CreateUDPThread() {
 
+	// Common
+	UnicodeString tempStr = L"";
+
+	// Create Thread
+	if(m_UdpThread != NULL) {
+		tempStr.sprintf(L"Client Thread is already exists.");
+		PrintMsg(tempStr);
+		return false;
+	}
+
+	// Creating Client Thread
+	m_UdpThread = new CUdpSocketThread(&m_sock_UDP);
+
 	return true;
 }
 //---------------------------------------------------------------------------

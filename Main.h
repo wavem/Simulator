@@ -118,9 +118,10 @@ public: // Basic Functions
 
 public: // Socket
 	SOCKET m_sock_UDP;
+	CUdpSocketThread* m_UdpThread;
 	bool __fastcall CreateUDPSocket();
 	bool __fastcall CreateUDPThread();
-	CUdpSocketThread* m_UDPThread;
+
 
 
 public: // Libxl functions
