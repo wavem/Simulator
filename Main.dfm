@@ -29,34 +29,29 @@ object FormMain: TFormMain
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
-      Width = 826
+      Width = 433
       Height = 548
       Align = alLeft
       Anchors = [akLeft, akTop, akRight, akBottom]
       DoubleBuffered = True
-      PageIndex = 1
       ParentDoubleBuffered = False
       TabOrder = 0
       object TPage
         Left = 0
         Top = 0
         Caption = 'Default'
-        ExplicitWidth = 150
-        ExplicitHeight = 150
+        ExplicitWidth = 826
         object __pnBase_00_: TPanel
           Left = 0
           Top = 0
-          Width = 826
+          Width = 433
           Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clMedGray
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 216
-          ExplicitTop = 112
-          ExplicitWidth = 185
-          ExplicitHeight = 41
+          ExplicitWidth = 826
         end
       end
       object TPage
@@ -64,23 +59,25 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = 'Page 1'
+        ExplicitWidth = 826
         object __pnBase_01: TPanel
           Left = 0
           Top = 0
-          Width = 826
+          Width = 433
           Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clActiveCaption
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 826
           DesignSize = (
-            826
+            433
             548)
           object grid_Protocol: TAdvStringGrid
             Left = 3
             Top = 56
-            Width = 820
+            Width = 427
             Height = 489
             Cursor = crDefault
             Anchors = [akLeft, akTop, akRight, akBottom]
@@ -196,6 +193,7 @@ object FormMain: TFormMain
             ShowSelection = False
             SortSettings.DefaultFormat = ssAutomatic
             Version = '7.8.0.1'
+            ExplicitWidth = 820
             ColWidths = (
               47
               94
@@ -255,22 +253,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 2
         Caption = 'Page 2'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
+        ExplicitWidth = 826
         object __pnBase_02_: TPanel
           Left = 0
           Top = 0
-          Width = 826
+          Width = 433
           Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clBtnText
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 168
-          ExplicitTop = 176
-          ExplicitWidth = 185
-          ExplicitHeight = 41
+          ExplicitWidth = 826
         end
       end
       object TPage
@@ -278,29 +272,25 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 3
         Caption = 'Page 3'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
+        ExplicitWidth = 826
         object __pnBase_03_: TPanel
           Left = 0
           Top = 0
-          Width = 826
+          Width = 433
           Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clHotLight
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 240
-          ExplicitTop = 144
-          ExplicitWidth = 185
-          ExplicitHeight = 41
+          ExplicitWidth = 826
         end
       end
     end
     object memo: TAdvMemo
-      Left = 826
+      Left = 432
       Top = 0
-      Width = 267
+      Width = 661
       Height = 548
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
