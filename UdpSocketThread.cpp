@@ -34,6 +34,7 @@ void __fastcall CUdpSocketThread::Execute() {
 	int t_errno = 0;
 	int t_ConnectTryingCount = 1;
 	int t_ReceivedSize = 0;
+	int t_SendSize = 0;
 
 	struct sockaddr_in	t_sockaddr_in;
 	struct sockaddr_in t_from_addr;
@@ -65,6 +66,23 @@ void __fastcall CUdpSocketThread::Execute() {
 
 		t_ReceivedSize = recvfrom(*m_sock, t_Buffer, 1500, 0, (struct sockaddr*)&t_from_addr, &t_fromaddrsize);
 		t_Str.sprintf(L"[RECV] Size : %d", t_ReceivedSize);
+		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
+
+
+
+		//t_Buffer[0] = 0x47;
+		//t_Buffer[1] = 0x42;
+		//t_Buffer[2] = 0x44;
+		//t_Buffer[3] = 0x31;
+		//t_Buffer[4] = ++t_Counter;
+		//t_Buffer[5] = t_Type;
+
+
+
+		t_SendSize = sendto(*m_sock, t_Buffer, t_ReceivedSize, 0, (struct sockaddr*)&t_from_addr, sizeof(t_from_addr));
+		t_Str.sprintf(L"[SEND] Req Type : %d, Count : %d, Size : %d", t_Buffer[5], t_Buffer[4], t_SendSize);
+		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
+		t_Str = L"----------------------------------------";
 		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 	}
 
